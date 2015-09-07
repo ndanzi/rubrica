@@ -1,0 +1,114 @@
+//$icon-font-path: "../bower_components/material-design-icons";
+// bower:scss
+@import "materialize/sass/materialize.scss";
+// endbower
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  @extend .grey-text, .text-darken-4;
+}
+
+main {
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+a.collection-item {
+  @extend .grey-text, .text-darken-4;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.icon-plus:before {
+  content: "\e600";
+}
+
+.padding {
+  padding: 5px;
+}
+
+.margin {
+  margin: 10px;
+}
+
+@media #{$small-and-down} {
+  .campo-titolo {
+    display: inline-block;
+  }
+  .campo-testo {
+    display: inline-block;
+  }
+  .campo {
+    text-align: center;
+  }
+}
+
+.cerca {
+  background-image: url("../images/icons/ic_search_white_24px.svg");
+
+}
+
+.v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-field label {
+  width: 100%;
+  text-align: left;
+}
+
+.input-field input[type=search] {
+  display: block;
+  line-height: inherit;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+}
+/*.input-field {
+  position: relative;
+  min-width: 300px;
+	overflow: hidden;
+  margin-top: 1rem;
+}*/
+.input-field input[type=search] ~ .ion-close-round {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  color: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: .3s color;
+}
+
+.switch label {
+  color: white;
+}
+
+.collection {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+.primary-color {
+  background-color: $primary-color;
+}
+
+.secondary-color {
+  background-color: $secondary-color;
+}
+
+.administrator-nav, .ordina, .ricerca {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.administrator-nav.ng-hide, .ordina.ng-hide, .ricerca.ng-hide {
+  opacity:0;
+}

@@ -1,0 +1,53 @@
+
+<div class="card-panel">
+  <a href="#/contatti-administrator" class="btn-floating  btn waves-effect waves-light"><i class="ion-android-arrow-back"></i></a>
+  <div class="row flow-text valign-wrapper">
+
+    <div class="col s12 m5 center-align">
+      <img src="images/ic_person_white_48dp_2x.png" class="circle secondary-color z-depth-1" style="display:inline-block">
+      <h2 class="center-align">{{contatto.nome | capitalize}}</h2>
+      <h2 class="center-align">{{contatto.cognome | capitalize}}</h2>
+    </div>
+    <div class="col s12 m7">
+      <p class="valign-wrapper">
+        <i class="ion-android-call grey-text text-darken-1"></i>
+        <b class="margin">Telefono:</b> {{contatto.telefono}}
+      </p>
+      <p class="valign-wrapper">
+        <i class="ion-email grey-text text-darken-1"></i>
+        <b class="margin">E-mail:</b> {{contatto.email}}
+      </p>
+      <p class="valign-wrapper">
+        <i class="ion-briefcase grey-text text-darken-1"></i>
+        <b class="margin">Ufficio:</b> {{contatto.ufficio}}
+      </p>
+      <p class="valign-wrapper">
+        <i class="ion-android-people grey-text text-darken-1"></i>
+        <b class="margin">Gruppo:</b> {{contatto.gruppo}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large">
+    <i class="large ion-gear-a" style="font-size: 32px"></i>
+  </a>
+  <ul>
+    <li tooltipped  data-position="left" data-delay="50" data-tooltip="Modifica contatto"><a class="btn-floating btn yellow darken-1" href="#/modifica-contatto/{{contatto.id}}"><i class="ion-edit"></i></i></a></li>
+    <li tooltipped data-position="left" data-delay="50" data-tooltip="Elimina contatto"><a class="btn-floating btn red modal-trigger" href='#demoModal' modal ><i class="ion-android-delete"></i></a></li>
+  </ul>
+</div>
+
+<div id="demoModal" class="modal">
+  <div class="modal-content">
+    <h5>Comfermare l'eliminazione di</h5>
+    <h4>{{contatto.cognome | capitalize}} {{contatto.nome | capitalize}}?</h4>
+  </div>
+  <div class="modal-footer">
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat">Annulla</a>
+    <a class=" modal-action modal-close waves-effect waves-green btn-flat red-text" ng-click="eliminaContatto()"><i class="ion-android-delete left"></i>Conferma</a>
+  </div>
+</div>
+
+

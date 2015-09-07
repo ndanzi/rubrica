@@ -1,0 +1,18 @@
+<div style="margin: 0.5rem 0 1rem 0">
+  <div class="collection with-header"
+       ng-repeat="contatto in listaContatti | orderBy: $parent.ordine |
+        groupBy:['gruppo'] | filter:$parent.ricerca">
+      <span ng-show="contatto.group_by_CHANGED && $parent.perGruppo">
+      <h5>{{contatto.gruppo | capitalize}}</h5>
+      <div class="divider"></div>
+    </span>
+    <a href="#/contatto/{{contatto.id}}" class="collection-item avatar">
+      <img src="images/icons/ic_person_white_24px.svg" class="circle secondary-color">
+      <b class="title">{{contatto.cognome | capitalize}} {{contatto.nome | capitalize}}</b>
+      <p grey-text text-darken-1><i class="ion-android-call grey-text"></i> {{contatto.telefono}} <br/>
+        <i class="ion-email grey-text"></i> {{contatto.email}}
+      </p>
+    </a>
+  </div>
+</div>
+

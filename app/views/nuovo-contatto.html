@@ -1,0 +1,67 @@
+<div class="card-panel">
+  <a href="#/contatti-administrator" class="btn-floating  btn waves-effect waves-light"><i class="ion-android-arrow-back"></i></a>
+  <form name="contattoForm" class="row flow-text valign-wrapper" ng-submit="submitForm(contattoForm.$valid)">
+    <div class="col s12 m5 center-align">
+      <img src="images/ic_person_white_48dp_2x.png" class="circle secondary-color z-depth-1" style="display:inline-block">
+      <div class="input-field col s12">
+        <input id="nome" name="nome" type="text" class="validate" required
+               ng-model="contatto.nome" value="contatto.nome"
+               ng-pattern="/^[a-zA-Z\s\d]*$/"
+               ng-class="{'invalid':contattoForm.nome.$invalid && contattoForm.nome.$dirty}">
+        <label class="active" for="nome"
+               data-error="Per favore usare solo lettere o numeri nel campo nome">Nome</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="cognome" name="cognome" type="text" class="validate" required
+               ng-model="contatto.cognome"
+               ng-pattern="/^[a-zA-Z\s\d]*$/"
+               ng-class="{'invalid':contattoForm.cognome.$invalid && contattoForm.cognome.$dirty}">
+        <label class="active" for="cognome"
+               data-error="Per favore usare solo lettere o numeri nel campo cognome">Cognome</label>
+      </div>
+    </div>
+    <div class="col s12 m7">
+      <div class="input-field col s12">
+        <i class="ion-android-call prefix"></i>
+        <input id="telefono" name="telefono" type="text" class="validate"
+               ng-model="contatto.telefono"
+               ng-pattern="/^[^\']*$/"
+               ng-class="{'invalid':contattoForm.telefono.$invalid && contattoForm.telefono.$dirty}">
+        <label class="active" for="telefono"
+               data-error="Per favore non inserire l'apice singolo nel campo telefono">Telefono</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="ion-email prefix"></i>
+        <input id="email" type="email" class="validate"
+               ng-model="contatto.email"
+               ng-pattern="/^[^\']*$/" >
+        <label class="active" for="email"
+               data-error="inserire un indirizzo e-mail valido">E-mail</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="ion-briefcase prefix"></i>
+        <input id="ufficio" name="ufficio" type="text" class="validate"
+               ng-model="contatto.ufficio"
+               ng-pattern="/^[^\']*$/"
+               ng-class="{'invalid':contattoForm.ufficio.$invalid && contattoForm.ufficio.$dirty}">
+        <label class="active" for="ufficio"
+               data-error="Per favore non inserire l'apice singolo nel campo ufficio">Ufficio</label>
+      </div>
+      <div class="input-field col s12">
+        <select  ng-model="contatto.gruppo" material-select watch required>
+          <option value="" disabled selected>Seleziona il gruppo</option>
+          <option ng-repeat="gruppo in listaGruppi" value="{{gruppo.nome}}">{{gruppo.nome}}</option>
+        </select>
+
+        <label>Gruppo</label>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn">Inserisci</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

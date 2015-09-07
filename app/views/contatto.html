@@ -1,0 +1,33 @@
+
+<div class="card-panel">
+  <a href="#/contatti" class="btn-floating  btn waves-effect waves-light"><i class="ion-android-arrow-back"></i></a>
+    <div class="row flow-text valign-wrapper">
+
+        <div class="col s12 m5 center-align">
+            <img src="images/ic_person_white_48dp_2x.png" class="circle secondary-color z-depth-1" style="display:inline-block">
+            <h2 class="center-align">{{contatto.nome | capitalize}}</h2>
+            <h2 class="center-align">{{contatto.cognome | capitalize}}</h2>
+        </div>
+        <div class="col s12 m7">
+            <p class="valign-wrapper">
+                <i class="ion-android-call grey-text text-darken-1"></i>
+                <b class="margin">Telefono:</b> {{contatto.telefono}}
+            </p>
+            <p class="valign-wrapper">
+                <i class="ion-email grey-text text-darken-1"></i>
+                <b class="margin">E-mail:</b> {{contatto.email}}
+            </p>
+            <p class="valign-wrapper">
+                <i class="ion-briefcase grey-text text-darken-1"></i>
+                <b class="margin">Ufficio:</b> {{contatto.ufficio}}
+            </p>
+            <p class="valign-wrapper">
+                <i class="ion-android-people grey-text text-darken-1"></i>
+                <b class="margin">Gruppo:</b> {{contatto.gruppo}}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
