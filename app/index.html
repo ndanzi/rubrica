@@ -26,7 +26,7 @@
       <nav>
         <div class="nav-wrapper container">
           <a href="#/" class="brand-logo">Rubrica</a>
-          <ul class="right ordina" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
+          <ul class="right ordina hide-on-small-and-down" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
             <li>
               <div class="switch">
               <label>
@@ -38,7 +38,7 @@
             </div></li>
           </ul>
 
-          <form class="right ordina" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
+          <form class="right ordina hide-on-small-and-down" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
             <div class="input-field">
               <input id="search" type="search" placeholder="cerca" required ng-model="ricerca">
               <label for="search"><i class="ion-search"></i></label>
@@ -47,8 +47,33 @@
           </form>
         </div>
       </nav>
-
     </header>
+    <nav class="hide-on-med-and-up" class="ordina" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
+      <div class="nav-wrapper container">
+        <ul class="center">
+          <li>
+            <div class="switch">
+              <label>
+                Ordina per cognome
+                <input type="checkbox" ng-model="perGruppo" ng-click="toggleOrdine()">
+                <span class="lever"></span>
+                Ordina per gruppo
+              </label>
+            </div></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="hide-on-med-and-up" class="ordina" ng-show="$location.path() === '/' || $location.path() === '/contatti-administrator'">
+      <div class="nav-wrapper container">
+        <form class="center">
+          <div class="input-field">
+            <input id="search" type="search" placeholder="cerca" required ng-model="ricerca">
+            <label for="search"><i class="ion-search"></i></label>
+            <i class="ion-close-round"></i>
+          </div>
+        </form>
+      </div>
+    </nav>
     <nav class="red administrator-nav" style="height: 2.5rem; line-height: 2.5rem"
       ng-show="$location.path() === '/nuovo-contatto'
        || $location.path() === '/contatti-administrator'

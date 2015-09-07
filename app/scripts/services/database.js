@@ -12,7 +12,7 @@ angular.module('rubricaApp')
     // Service logic
     // ...
 
-    var base = 'http://localhost/rubrica/DBMS/';
+    var base = 'http://192.168.1.104/rubrica/DBMS/';
     // Public API here
     return {
       listaContatti: function () {
