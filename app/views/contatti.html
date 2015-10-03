@@ -1,3 +1,4 @@
+<!--[if !IE]>-->
 <div style="margin: 0.5rem 0 1rem 0">
   <div class="collection with-header"
        ng-repeat="contatto in listaContatti | orderBy: $parent.ordine |
@@ -15,5 +16,35 @@
     </a>
   </div>
 </div>
+<!--<![endif]-->
 
+<!--[if lte IE 8 ]>
+<div style="width: 70%; margin-left: 15%; margin-top: 120px">
+  <ul>
+
+    <li style="list-style-type: none" ng-repeat="contatto in listaContatti | orderBy: $parent.ordine |
+        groupBy:['gruppo'] | filter:$parent.ricerca">
+          <span ng-show="contatto.group_by_CHANGED && $parent.perGruppo">
+      <h2>{{contatto.gruppo | capitalize}}</h2>
+      <hr>
+    </span>
+      <a href="#/contatto/{{contatto.id}}" style="color:black; text-decoration: none">
+        <img src="images/icons/ic_person_black_48dp/web/ic_person_black_48dp_1x.png" style="margin-bottom: -5px" height="30" width="30"/>
+        <b style="font-size: 30px">{{contatto.cognome | capitalize}} {{contatto.nome | capitalize}}</b>
+        <ul>
+          <li><b>Tel:</b> {{contatto.telefono}}</li>
+          <li><b>E-mail:</b> {{contatto.email}}</li>
+        </ul>
+      </a>
+      <hr>
+    </li>
+  </ul>
+</div>
+<![endif]-->
+
+
+<!--[if !IE]>-->
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<![endif]-->
 

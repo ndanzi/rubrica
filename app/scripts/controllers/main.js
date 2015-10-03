@@ -10,9 +10,9 @@
 angular.module('rubricaApp')
   .controller('MainCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.$location = $location;
-
     $scope.ordine = ['cognome', 'gruppo'];
-
+    $scope.perGruppo = false;
+    
     $scope.toggleOrdine = function() {
       if($scope.perGruppo) {
         $scope.ordine = ['gruppo', 'cognome'];
